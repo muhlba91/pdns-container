@@ -1,4 +1,5 @@
 #!/command/with-contenv /bin/sh
 /bin/pdns-prepare-config
+/bin/pdns-insert-data
 exec 2>&1
 exec pdns_server

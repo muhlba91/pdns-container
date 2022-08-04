@@ -36,10 +36,12 @@ RUN apk add --no-cache \
   pdns-backend-sqlite3=${PDNS_VERSION} \
   pdns-doc=${PDNS_VERSION} \
   pdns-tools=${PDNS_VERSION} \
-  && mkdir /etc/pdns/conf.d
+  && mkdir /etc/pdns/conf.d \
+  && mkdir /data
 
 COPY assets/s6-rc.d/ /etc/s6-overlay/s6-rc.d/
 COPY assets/pdns-prepare-config.sh /bin/pdns-prepare-config
+COPY assets/pdns-insert-data.sh /bin/pdns-insert-data
 COPY assets/log-to-stdout.sh /bin/log-to-stdout
 COPY assets/pdns.conf /etc/pdns/pdns.conf
 
