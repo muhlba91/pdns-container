@@ -1,0 +1,24 @@
+apiVersion: v1
+entries:
+  auth:
+  - apiVersion: v2
+    appVersion: '@sha256:c7af47742cb1fb3d59db9e4988d85f8237258b49af368c9abdd20f46889dd642'
+    created: "2022-08-04T09:51:29.15466758Z"
+    description: PowerDNS (PDNS) Authoritative Server
+    digest: 88fb3d006d408798716128e899fd5dacfe7c549e7217b9a8d81a9aed74cfb03e
+    home: https://github.com/muhlba91/pdns-container
+    keywords:
+    - powerdns
+    - pdns
+    - pdns-auth
+    maintainers:
+    - email: daniel.muehlbachler@niftyside.io
+      name: Daniel Muehlbachler-Pietrzykowski
+    name: auth
+    sources:
+    - https://github.com/muhlba91/pdns-container
+    type: application
+    urls:
+    - https://github.com/muhlba91/pdns-container/releases/download/chart/auth/v1.0.1/auth-1.0.1.tgz
+    version: 1.0.1
+generated: "2022-08-04T09:51:29.15467348Z"
