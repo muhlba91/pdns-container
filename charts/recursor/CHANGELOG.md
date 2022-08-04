@@ -1,6 +1,13 @@
 # Changelog
 
 
+### [1.0.3](https://github.com/muhlba91/pdns-container/compare/chart/recursor/v1.0.2...chart/recursor/v1.0.3) (2022-08-04)
+
+
+### Bug Fixes
+
+* fix recursor app version ([858aa8a](https://github.com/muhlba91/pdns-container/commit/858aa8ac773cba58e726c10d23394be24595e9eb))
+
 ### [1.0.2](https://github.com/muhlba91/pdns-container/compare/chart/recursor/v1.0.1...chart/recursor/v1.0.2) (2022-08-04)
 
 
