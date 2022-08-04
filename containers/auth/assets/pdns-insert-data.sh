@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-GSQLITE3_CMD="sqlite3 ${PDNS_CONF_GSQLITE3_DATABASE}"
+SQLITE3_CMD="sqlite3 ${PDNS_CONF_GSQLITE3_DATABASE}"
 
 # initialiaze domains
 echo Initializing Domains
