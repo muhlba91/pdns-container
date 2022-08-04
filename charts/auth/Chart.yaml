@@ -20,4 +20,4 @@ maintainers:
 # NOTE: this value is updated by the release process
 appVersion: "@sha256:c7af47742cb1fb3d59db9e4988d85f8237258b49af368c9abdd20f46889dd642"
 # NOTE: this value is updated by the release process
-version: 0.0.0
+version: 1.0.1
