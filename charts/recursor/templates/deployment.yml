@@ -48,7 +48,7 @@ spec:
               protocol: UDP
           {{- with .Values.extraEnv }}
           env:
-            {{- toYaml .Values.extraEnv | nindent 12 }}
+            {{- toYaml . | nindent 12 }}
           {{- end }}
           {{- if or .Values.data.enabled .Values.additionalVolumes }}
           volumeMounts:

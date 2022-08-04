@@ -13,8 +13,9 @@ serviceAccount:
   annotations: {}
   name: ""
 
-extraEnv: {}
-  # ENV_VARIABLE: value
+extraEnv: []
+  # - name: VARIABLE
+  #   value: value
 
 # You can pass in your configuration through volume mounts to /etc/pdns.
 # You can pass in data to be initialited through volume mounts to /data.
