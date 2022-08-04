@@ -1,0 +1,26 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "pdns.fullname" . }}
+  labels:
+    {{- include "pdns.labels" . | nindent 4 }}
+  annotations:
+    {{- .Values.service.dns.annotations | toYaml | nindent 4 }}
+spec:
+  type: {{ .Values.service.dns.type }}
+  {{- if .Values.service.dns.loadBalancerIP }}
+  loadBalancerIP: {{ .Values.service.dns.loadBalancerIP }}
+  {{- end }}
+  ipFamilyPolicy: {{ .Values.service.dns.ipFamilyPolicy }}
+  ports:
+    - port: 53
+      targetPort: tcp-dns
+      protocol: TCP
+      name: tcp-dns
+    - port: 53
+      targetPort: udp-dns
+      protocol: UDP
+      name: udp-dns
+  selector:
+    {{- include "pdns.selectorLabels" . | nindent 6 }}

@@ -1,0 +1,12 @@
+{
+  "releaseCommitMessageFormat": "chore(release): release auth chart {{currentTag}} [skip ci] [chart] [release]",
+  "tagPrefix": "chart/auth/v",
+  "bumpFiles": [
+    {
+      "filename": "Chart.yaml",
+      "updater": "../../.github/workflows/scripts/helm-version-updater.js"
+    }
+  ],
+  "packageFiles": [],
+  "header": "# Changelog\n\n"
+}

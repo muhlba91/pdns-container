@@ -1,0 +1,23 @@
+---
+apiVersion: v2
+
+name: recursor
+description: PowerDNS (PDNS) Recursor
+type: application
+
+home: https://github.com/muhlba91/pdns-container
+sources:
+  - https://github.com/muhlba91/pdns-container
+keywords:
+  - powerdns
+  - pdns
+  - pdns-recursor
+
+maintainers:
+  - name: Daniel Muehlbachler-Pietrzykowski
+    email: daniel.muehlbachler@niftyside.io
+
+# NOTE: this value is updated by the release process
+appVersion: "sha256:0fba444d5b936d8ed99fc7103f25d61f3a68f91a36ec6f3c6b91f49c21d06d76"
+# NOTE: this value is updated by the release process
+version: 0.0.0

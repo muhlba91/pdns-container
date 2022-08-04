@@ -69,6 +69,12 @@ Please set `PDNS_CONF_GSQLITE3_DATABASE` if you choose to use a different path.
 - Mount your PDNS configuration files in `/etc/pdns` or `/etc/pdns/conf.d` when running the container.
 - Use environment variables prefixed with `PDNS_CONF_`. (see [`pdns-prepare-config.sh`](containers/auth/assets/pdns-prepare-config.sh))
 
+You can initialize data by mounting CSV files to `/data`:
+
+- `domains.csv` (Domains): format `name`
+- `tsig.csv` (TSIG Keys): format `domain,name,secret`
+- `records.csv` (Records): format `domain,name,type,content`
+
 ### Recursor
 
 - Mount your PDNS configuration files in `/etc/pdns` or `/etc/pdns/conf.d` when running the container.

@@ -1,0 +1,65 @@
+---
+image:
+  repository: quay.io/muhlba91/pdns-recursor
+  pullPolicy: IfNotPresent
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ""
+
+extraEnv: {}
+  # ENV_VARIABLE: value
+
+# You can pass in your configuration through volume mounts to /etc/pdns.
+# You can pass in data to be initialited through volume mounts to /data.
+additionalVolumes: []
+additionalVolumeMounts: []
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+
+resources: {}
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+service:
+  dns:
+    loadBalancerIP: ""
+    type: ClusterIP
+    ipFamilyPolicy: SingleStack
+    annotations: {}
+  http:
+    enabled: false
+    containerPort: 80
+    port: 80
+    loadBalancerIP: ""
+    type: ClusterIP
+    ipFamilyPolicy: SingleStack
+    annotations: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+# Initializes PDNS data
+data:
+  enabled: false
+  # The list of forwarded zone to populate
+  forwardZones: |
+    domain.com=10.0.0.1:53

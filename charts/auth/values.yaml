@@ -1,0 +1,78 @@
+---
+image:
+  repository: quay.io/muhlba91/pdns-auth
+  pullPolicy: IfNotPresent
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ""
+
+extraEnv: {}
+  # ENV_VARIABLE: value
+
+# You can pass in your configuration through volume mounts to /etc/pdns.
+# You can pass in data to be initialited through volume mounts to /data.
+additionalVolumes: []
+additionalVolumeMounts: []
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+
+resources: {}
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+service:
+  dns:
+    loadBalancerIP: ""
+    type: ClusterIP
+    ipFamilyPolicy: SingleStack
+    annotations: {}
+  http:
+    enabled: false
+    containerPort: 80
+    port: 80
+    loadBalancerIP: ""
+    type: ClusterIP
+    ipFamilyPolicy: SingleStack
+    annotations: {}
+
+persistence:
+  enabled: false
+  accessMode: ReadWriteOnce
+  storageClass: ""
+  size: 1Gi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+# Initializes PDNS data
+data:
+  enabled: false
+  # The list of domains to populate
+  domains: |
+    domain.com
+  # The list of TSIG keys to populate
+  tsig: |
+    domain.com,app,SL/TUMo1IG4cuxUIumG3210J3fm1to073yFDljKyunzirsRAIScyhcK65u5a4pqNSCT4eE8OutrQO6hmhRI1fQ==
+  # The list of records to populate
+  records: |
+    domain.com,domain.com,SOA,ns.domain.com hostmaster.domain.com 1 10800 3600 604800 60
+    domain.com,domain.com,NS,ns.domain.com

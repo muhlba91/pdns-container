@@ -1,0 +1,24 @@
+{{- if .Values.service.http.enabled }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "pdns.fullname" . }}-http
+  labels:
+    {{- include "pdns.labels" . | nindent 4 }}
+  annotations:
+    {{- .Values.service.http.annotations | toYaml | nindent 4 }}
+spec:
+  type: {{ .Values.service.http.type }}
+  {{- if .Values.service.http.loadBalancerIP }}
+  loadBalancerIP: {{ .Values.service.http.loadBalancerIP }}
+  {{- end }}
+  ipFamilyPolicy: {{ .Values.service.http.ipFamilyPolicy }}
+  ports:
+    - port: {{ .Values.service.http.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "pdns.selectorLabels" . | nindent 6 }}
+{{- end }}

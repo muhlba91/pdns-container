@@ -1,0 +1,16 @@
+{{- if .Values.data.enabled }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "pdns.fullname" . }}-data
+  labels:
+    {{- include "pdns.labels" . | nindent 4 }}
+data:
+  domains.csv: |
+    {{- .Values.data.domains | nindent 4 }}
+  tsig.csv: |
+    {{- .Values.data.tsig | nindent 4 }}
+  records.csv: |
+    {{- .Values.data.records | nindent 4 }}
+{{- end }}

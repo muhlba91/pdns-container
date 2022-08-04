@@ -1,0 +1,102 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "pdns.fullname" . }}
+  labels:
+    {{- include "pdns.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  serviceName: {{ include "pdns.fullname" . }}
+  selector:
+    matchLabels:
+      {{- include "pdns.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "pdns.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "pdns.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}{{- if not (hasPrefix "@" (.Values.image.tag | default .Chart.AppVersion)) -}}:{{- end -}}{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          ports:
+            {{- if .Values.service.http.enabled }}
+            - name: http
+              containerPort: {{ .Values.service.http.containerPort }}
+              protocol: TCP
+            {{- end }}
+            - name: tcp-dns
+              containerPort: 53
+              protocol: TCP
+            - name: udp-dns
+              containerPort: 53
+              protocol: UDP
+          {{- with .Values.extraEnv }}
+          env:
+            {{- toYaml .Values.extraEnv | nindent 12 }}
+          {{- end }}
+          volumeMounts:
+            - name: database
+              mountPath: /var/lib/pdns
+          {{- if .Values.data.enabled }}
+            - name: data
+              mountPath: /data
+          {{- end }}
+          {{- if .Values.additionalVolumeMounts }}
+            {{ toYaml .Values.additionalVolumeMounts | nindent 12 }}
+          {{- end }}
+      {{- if or .Values.data.enabled .Values.additionalVolumes (not .Values.persistence.enabled) }}
+      volumes:
+      {{- if .Values.data.enabled }}
+        - name: data
+          configMap:
+            name: {{ include "pdns.fullname" . }}-data
+      {{- end }}
+      {{- if not .Values.persistence.enabled }}
+        - name: database
+          emptyDir: {}
+      {{- end }}
+      {{- if .Values.additionalVolumes }}
+        {{ toYaml .Values.additionalVolumes | nindent 8 }}
+      {{- end }}
+      {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+  {{- if .Values.persistence.enabled }}
+  volumeClaimTemplates:
+    - metadata:
+        name: database
+      spec:
+        accessModes:
+          - {{ .Values.persistence.accessMode }}
+        storageClassName: {{ .Values.persistence.storageClass }}
+        resources:
+          requests:
+            storage: {{ .Values.persistence.size }}
+  {{- end }}
