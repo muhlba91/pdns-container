@@ -1,11 +1,9 @@
 #!/bin/bash
 set -e
 
-export GSQLITE3_DATABASE=${PDNS_CONF_GSQLITE3_DATABASE:-"/var/lib/pdns/pdns.sqlite"}
-
 SCHEMA_VERSION_TABLE="_schema_version"
 
-GSQLITE3_CMD="sqlite3 ${GSQLITE3_DATABASE}"
+GSQLITE3_CMD="sqlite3 ${PDNS_CONF_GSQLITE3_DATABASE}"
 
 # init database if necessary
 if [[ -z "$(printf '.tables' | ${GSQLITE3_CMD})" ]]; then
