@@ -3,6 +3,26 @@ entries:
   auth:
   - apiVersion: v2
     appVersion: '@sha256:c7af47742cb1fb3d59db9e4988d85f8237258b49af368c9abdd20f46889dd642'
+    created: "2022-08-04T11:41:41.892307513Z"
+    description: PowerDNS (PDNS) Authoritative Server
+    digest: 36a0eecabd8d788c82142397a0611f74afd3203110ea4eed49a6b2897c990459
+    home: https://github.com/muhlba91/pdns-container
+    keywords:
+    - powerdns
+    - pdns
+    - pdns-auth
+    maintainers:
+    - email: daniel.muehlbachler@niftyside.io
+      name: Daniel Muehlbachler-Pietrzykowski
+    name: auth
+    sources:
+    - https://github.com/muhlba91/pdns-container
+    type: application
+    urls:
+    - https://github.com/muhlba91/pdns-container/releases/download/chart/auth/v1.0.4/auth-1.0.4.tgz
+    version: 1.0.4
+  - apiVersion: v2
+    appVersion: '@sha256:c7af47742cb1fb3d59db9e4988d85f8237258b49af368c9abdd20f46889dd642'
     created: "2022-08-04T11:25:11.578218583Z"
     description: PowerDNS (PDNS) Authoritative Server
     digest: a32ec3848b49018e32e2a4f93edbe1d3fba29c6bee09916ffa0a8c60390c540c
@@ -142,4 +162,4 @@ entries:
     urls:
     - https://github.com/muhlba91/pdns-container/releases/download/chart/recursor/v1.0.1/recursor-1.0.1.tgz
     version: 1.0.1
-generated: "2022-08-04T11:25:39.265491537Z"
+generated: "2022-08-04T11:41:41.892328113Z"
