@@ -1,6 +1,13 @@
 # Changelog
 
 
+### [1.0.4](https://github.com/muhlba91/pdns-container/compare/chart/recursor/v1.0.3...chart/recursor/v1.0.4) (2022-08-04)
+
+
+### Bug Fixes
+
+* fix chart env ([67263a3](https://github.com/muhlba91/pdns-container/commit/67263a380729b91f9c4325c90b8b915b5c6217d8))
+
 ### [1.0.3](https://github.com/muhlba91/pdns-container/compare/chart/recursor/v1.0.2...chart/recursor/v1.0.3) (2022-08-04)
 
 
