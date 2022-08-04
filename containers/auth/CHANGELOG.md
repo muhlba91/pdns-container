@@ -1,6 +1,13 @@
 # Changelog
 
 
+### [1.0.3](https://github.com/muhlba91/pdns-container/compare/container/auth/v1.0.2...container/auth/v1.0.3) (2022-08-04)
+
+
+### Bug Fixes
+
+* fix data initialization ([481d1fa](https://github.com/muhlba91/pdns-container/commit/481d1fae7e6ab7ff0bd73c58fe134c9c5348e790))
+
 ### [1.0.2](https://github.com/muhlba91/pdns-container/compare/container/auth/v1.0.1...container/auth/v1.0.2) (2022-08-04)
 
 
