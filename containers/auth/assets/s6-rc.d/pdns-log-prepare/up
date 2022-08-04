@@ -1,0 +1,3 @@
+if { mkdir -p /var/log/pdns }
+if { chown nobody:nogroup /var/log/pdns }
+chmod 02755 /var/log/pdns

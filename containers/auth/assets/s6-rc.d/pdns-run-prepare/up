@@ -1,0 +1,3 @@
+if { mkdir -p /run/pdns }
+if { chown nobody:nogroup /run/pdns }
+chmod 02755 /run/pdns

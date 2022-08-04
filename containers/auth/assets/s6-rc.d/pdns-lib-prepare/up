@@ -1,0 +1,3 @@
+if { mkdir -p /var/lib/pdns }
+if { chown nobody:nogroup /var/lib/pdns }
+chmod 02755 /var/lib/pdns
