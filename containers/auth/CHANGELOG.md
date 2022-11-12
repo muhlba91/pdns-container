@@ -1,6 +1,13 @@
 # Changelog
 
 
+### [1.1.1](https://github.com/muhlba91/pdns-container/compare/container/auth/v1.1.0...container/auth/v1.1.1) (2022-11-12)
+
+
+### Bug Fixes
+
+* set dedicated version for auth ([6805712](https://github.com/muhlba91/pdns-container/commit/680571256469022bbf4a5841cb7ea63f798a7965))
+
 ## [1.1.0](https://github.com/muhlba91/pdns-container/compare/container/auth/v1.0.3...container/auth/v1.1.0) (2022-11-12)
 
 
