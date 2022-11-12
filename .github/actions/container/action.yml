@@ -43,7 +43,7 @@ runs:
     - name: Define Versions
       shell: bash
       run: |
-        VERSION_FILE=`cat containers/PDNS_VERSION`
+        VERSION_FILE=`cat containers/${{ inputs.container }}/PDNS_VERSION`
         echo "PDNS_VERSION=${VERSION_FILE%%*( )}" >> $GITHUB_ENV
         VERSION_FILE=`cat containers/ALPINE_VERSION`
         echo "ALPINE_VERSION=${VERSION_FILE%%*( )}" >> $GITHUB_ENV
