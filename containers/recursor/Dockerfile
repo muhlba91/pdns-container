@@ -34,6 +34,7 @@ RUN apk add --no-cache \
 COPY assets/s6-rc.d/ /etc/s6-overlay/s6-rc.d/
 COPY assets/log-to-stdout.sh /bin/log-to-stdout
 COPY assets/forward_zones.conf /etc/pdns/forward_zones.conf
+COPY assets/allow_from.conf /etc/pdns/allow_from.conf
 COPY assets/recursor.conf /etc/pdns/recursor.conf
 
 EXPOSE 53/udp
