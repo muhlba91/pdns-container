@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [1.2.0](https://github.com/muhlba91/pdns-container/compare/container/recursor/v1.1.2...container/recursor/v1.2.0) (2022-11-12)
+
+
+### Features
+
+* add allow-from-file for recursor ([bb6c173](https://github.com/muhlba91/pdns-container/commit/bb6c173c91b7c545a6101035cd4f6543472fc560))
+
 ### [1.1.2](https://github.com/muhlba91/pdns-container/compare/container/recursor/v1.1.1...container/recursor/v1.1.2) (2022-11-12)
 
 
