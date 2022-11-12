@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [1.1.0](https://github.com/muhlba91/pdns-container/compare/container/auth/v1.0.3...container/auth/v1.1.0) (2022-11-12)
+
+
+### Features
+
+* enable auth ipv6; set common pdns package version to 4.6.2-r1 ([481e5a2](https://github.com/muhlba91/pdns-container/commit/481e5a28e3c5279c26e9cead129dd952c573781a))
+
 ### [1.0.3](https://github.com/muhlba91/pdns-container/compare/container/auth/v1.0.2...container/auth/v1.0.3) (2022-08-04)
 
 
