@@ -1,6 +1,8 @@
 # Changelog
 
 
+### [1.0.7](https://github.com/muhlba91/pdns-container/compare/chart/auth/v1.0.6...chart/auth/v1.0.7) (2022-11-12)
+
 ### [1.0.6](https://github.com/muhlba91/pdns-container/compare/chart/auth/v1.0.5...chart/auth/v1.0.6) (2022-11-12)
 
 ### [1.0.5](https://github.com/muhlba91/pdns-container/compare/chart/auth/v1.0.4...chart/auth/v1.0.5) (2022-08-04)
