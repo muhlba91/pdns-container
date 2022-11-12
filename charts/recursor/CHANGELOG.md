@@ -1,6 +1,8 @@
 # Changelog
 
 
+### [1.0.5](https://github.com/muhlba91/pdns-container/compare/chart/recursor/v1.0.4...chart/recursor/v1.0.5) (2022-11-12)
+
 ### [1.0.4](https://github.com/muhlba91/pdns-container/compare/chart/recursor/v1.0.3...chart/recursor/v1.0.4) (2022-08-04)
 
 
