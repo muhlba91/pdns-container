@@ -144,6 +144,26 @@ entries:
   recursor:
   - apiVersion: v2
     appVersion: '@sha256:0fba444d5b936d8ed99fc7103f25d61f3a68f91a36ec6f3c6b91f49c21d06d76'
+    created: "2022-11-12T07:21:28.328497956Z"
+    description: PowerDNS (PDNS) Recursor
+    digest: b8e7f25cf96aa01550dc3a065c4051fc7c1f8afecc73cb55684a133f31b88a00
+    home: https://github.com/muhlba91/pdns-container
+    keywords:
+    - powerdns
+    - pdns
+    - pdns-recursor
+    maintainers:
+    - email: daniel.muehlbachler@niftyside.io
+      name: Daniel Muehlbachler-Pietrzykowski
+    name: recursor
+    sources:
+    - https://github.com/muhlba91/pdns-container
+    type: application
+    urls:
+    - https://github.com/muhlba91/pdns-container/releases/download/chart/recursor/v1.0.6/recursor-1.0.6.tgz
+    version: 1.0.6
+  - apiVersion: v2
+    appVersion: '@sha256:0fba444d5b936d8ed99fc7103f25d61f3a68f91a36ec6f3c6b91f49c21d06d76'
     created: "2022-11-12T07:05:35.228096619Z"
     description: PowerDNS (PDNS) Recursor
     digest: 51ac725f47cd8dcd6a023ddc60cd49f30323c375b286a6c77d2829f891970cab
@@ -242,4 +262,4 @@ entries:
     urls:
     - https://github.com/muhlba91/pdns-container/releases/download/chart/recursor/v1.0.1/recursor-1.0.1.tgz
     version: 1.0.1
-generated: "2022-11-12T07:19:04.027853168Z"
+generated: "2022-11-12T07:21:28.328689759Z"
